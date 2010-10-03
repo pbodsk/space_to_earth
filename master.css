@@ -1,0 +1,62 @@
+html {
+
+	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#31bbd4));
+	background: -moz-linear-gradient(270deg, #000, #31bbd4);
+
+	/*height: 100%;*/
+	width: 100%;
+}
+
+#header {
+	width: 100%;
+	border: 1px solid #000;
+	height: 180px;
+	text-align: center;
+	color: #fff;
+	background: url('img/starsForeground.png') repeat-x scroll -100% 0 transparent;
+}
+
+#outerStarContainer {
+	background: url('img/starsBackground.png') repeat-x scroll -50% 0 transparent;
+	height: 180px;
+}
+
+#innerStarContainer {
+	background: url('img/starsMiddleground.png') repeat-x scroll -10% 0 transparent;
+	height: 180px;
+}
+ 
+#wrap {
+	background: #fff;
+	margin: auto;
+	margin-top: 50px;
+	height: 50%;
+	width: 80%;
+	overflow: auto;
+}
+
+#content {
+	float: left;
+	width: 75%;
+}
+
+#sidebar {
+	float: right;
+	width: 23%;
+}
+
+#footer {
+	margin-top: 30px;
+	width: 100%;
+	background: #52910E;
+	height: 100px;
+}
+
+.group:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+

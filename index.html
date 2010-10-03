@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>peterbodskov.dk</title>
+	<link rel="stylesheet" media="screen, projection" href="screen.css" />
+</head>
+<body>
+	<div id="header">
+		<div id="outerStarContainer">
+			<div id="innerStarContainer">
+				<h1>peterbodskov.dk</h1>
+			</div>
+		</div>
+	</div>
+	<div id="wrap">
+		<div id="contentContainer" class="centeredContent">
+
+			<div id="content" class="narrowcolumn floatLeft">
+				<div class="post-220 post type-post hentry category-programming tag-closures tag-javascript tag-programming" id="post-220">
+					<h2 class="entryHeader"><a class="linkNoDecoration" href="http://peterbodskov.dk/2010/09/20/javascript-closures/" rel="bookmark" title="Permanent Link to JavaScript closures">JavaScript closures</a></h2>
+					<div class="divPostData">
+							<p class="Author floatLeft small">Posted by <a href="http://peterbodskov.dk/author/peter/" title="Posts by peter">peter</a> in <a href="http://peterbodskov.dk/category/programming/" title="View all posts in Programming" rel="category tag">Programming</a> on the 20th Sep 2010 </p>
+							<p class="Comments floatRight small"><a href="http://peterbodskov.dk/2010/09/20/javascript-closures/#respond" title="Comment on JavaScript closures">0 Comments</a></p>
+					</div>
+					<div class="entry">
+										<p>I like JavaScript! There, I said it! </p>
+					<p>I work in a JavaScript hostile environment where people want to do everything in pure Java, which is why I spend most of my time trying to get JSF and a Portal server to play together nicely (sad story!). But! Deep down I long for a simpler life, a life consisting of HTML, CSS and pure JavaScript and nothing else (well maybe a bit of PHP on the server). </p>
+					<p>So why do I like JavaScript? I like it because it&#8217;s so dynamic. Need a method on an object? Just add it when you need it. You can bend the rules and pretty much do as you please. More than once has JavaScript saved our arse when normal server side programming has failed. And then there&#8217;s the more &#8220;hard to grasp when you&#8217;re used to Java&#8221; features. Things like that a function can return a function, callback functions, scope of variables and closures.</p>
+
+					<p>Especially closures I&#8217;ve had quite a few attempts at trying to understand. I&#8217;ve been attending a JavaScript course recently which was very interesting and fun. Of course we were discussing closures and this time I think it finally clicked. Therefore, to remember, I&#8217;ll write this post, so that I can re-read it in six months when I&#8217;ve forgotten about closures again.</p>
+					<p><span id="more-220"></span></p>
+					<p><strong>Definition of a closure</strong></p>
+					<p>Here&#8217;s my definition of a closure: The fact that an inner function can get access to outer variables is called a closure. The inner function &#8220;closes around&#8221; the outer variables and have access to them, even after the &#8220;environment&#8221; where the outer variables were defined is dead (removed from the execution context/scope chain).</p>
+
+					<p><strong>An Example</strong></p>
+					<p>Here&#8217;s a simple example:</p>
+					<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:435px;"><div class="javascript codecolorer"><span class="kw2">var</span> closureOne <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+					&nbsp; &nbsp; <span class="kw2">var</span> outerVarOne <span class="sy0">=</span> <span class="st0">&quot;hey there, I'm outerVarOne. You might remember me from such classics as: closureOne&quot;</span><span class="sy0">;</span><br />
+
+					&nbsp; &nbsp; <span class="kw2">var</span> returnFunction <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+					&nbsp; &nbsp; &nbsp; &nbsp; console.<span class="me1">log</span><span class="br0">&#40;</span><span class="st0">&quot;This is written in the returned function from closureOne, and here's outerVarOne: &quot;</span> <span class="sy0">+</span> outerVarOne<span class="br0">&#41;</span><span class="sy0">;</span><br />
+
+					&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+					&nbsp; &nbsp; <span class="kw1">return</span> returnFunction<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+					<span class="br0">&#125;</span></div></div>
+					<p>The variable closureOne is a function. In this function we define a variable called outerVarOne. This variable is now visible inside the closureOne function. Here&#8217;s where things start to get interesting, we now define an inner function called returnFunction in our closureOne function. The function in this case is quite simple. All it does is write a message which includes outerVarOne. In other words: This inner function has access to outerVarOne.<br />
+					Finally we return the result of executing returnFunction as the result of closureOne.<br />
+					Eh! What&#8217;s so special about that? Nothing yet, but now the scene has been set. I can now call my closureOne function like so:</p>
+
+					<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:435px;"><div class="text codecolorer">console.log('before closureOne');<br />
+					closureOne();<br />
+					console.log('after closureOne');</div></div>
+					<p>And see the following in my console:</p>
+					<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:435px;"><div class="text codecolorer">before closureOne<br />
+					This is written in the returned function from closureOne, and here's outerVarOne: hey there, I'm outerVarOne. You might remember me from such classics as: closureOne<br />
+					after closureOne</div></div>
+					<p>What&#8217;ll happen when I call my closureOne function is, that it will add itself to the scope chain&#8230;including it&#8217;s outer environment! The trick is, that even though I&#8217;m calling closureOne, that&#8217;s not really the function that&#8217;s being called. The function being executed is the outcome of the inner returnFunction that we defined. And since returnFunction needed access to outerVarOne, it has created a closure around it, meaning that returnFunction has access to outerVarOne, even though this variable is no longer accessible to the rest of the world, as it was removed from the scope chain when closureOne was originally executed!<br />
+
+					Mind blowing eh? And just to prove the point, let&#8217;s see what happens if I were to try to read the value of outerVarOne from outside my closure:</p>
+					<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:435px;"><div class="text codecolorer">console.log('before closureOne');<br />
+					console.log(closureOne.outerVarOne);<br />
+					closureOne();<br />
+					console.log(closureOne.outerVarOne);<br />
+					console.log('after closureOne');</div></div>
+					<p>So, here I&#8217;m trying to get access to outerVarOne twice, before and after executing closureOne(); and the result:</p>
+					<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:435px;"><div class="text codecolorer">before closureOne<br />
+
+					undefined<br />
+					This is written in the returned function from closureOne, and here's outerVarOne: hey there, I'm outerVarOne. You might remember me from such classics as: closureOne<br />
+					undefined<br />
+					after closureOne</div></div>
+					<p>See, I cannot get access to the outerVarOne as it is dead to the outer world because the closureOne function has already been executed and removed from the scope chain, only in my closure can I get access to it.</p>
+					<p><strong>Another Example</strong><br />
+					Here&#8217;s another example, this time we&#8217;re using the module pattern, meaning that we&#8217;re executing the function straight away:</p>
+
+					<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:435px;"><div class="javascript codecolorer"><span class="kw2">var</span> closureTwo <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+					&nbsp; &nbsp; <span class="kw2">var</span> innerVarTwo <span class="sy0">=</span> <span class="st0">&quot;hey there, I'm innerVarTwo. You might remember me from such classics as: closureTwo&quot;</span><span class="sy0">;</span><br />
+
+					&nbsp; &nbsp; <span class="kw1">return</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+					&nbsp; &nbsp; &nbsp; &nbsp; console.<span class="me1">log</span><span class="br0">&#40;</span><span class="st0">&quot;This is written in the returned function from closureTwo, and here's innerVarTwo: &quot;</span> <span class="sy0">+</span> innerVarTwo<span class="br0">&#41;</span><span class="sy0">;</span><br />
+
+					&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">;</span><br />
+					<span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></div>
+					<p>Apart from that, nothing much is different from the first example. The advantage of the module pattern is that you can ensure privacy due to the fact that your function is executed right after it is defined. This also means that it is popped of the execution chain straight away, but!&#8230;Your closure will still have access to any private variables that it needs, when it is run. </p>
+					<p><strong>A Final Example</strong></p>
+					<p>Here&#8217;s a final example. This time we&#8217;re sending a parameter to the called function:</p>
+					<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:435px;"><div class="javascript codecolorer"><span class="kw2">var</span> closureThree <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>aParam<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+
+					&nbsp; &nbsp; <span class="kw2">var</span> innerVarThree <span class="sy0">=</span> <span class="st0">&quot;hey there, I'm innerVarThree. You might remember me from such classics as: closureThree&quot;</span><span class="sy0">;</span><br />
+					&nbsp; &nbsp; <span class="kw1">return</span> <span class="kw2">function</span><span class="br0">&#40;</span>aParam<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+
+					&nbsp; &nbsp; &nbsp; &nbsp; console.<span class="me1">log</span><span class="br0">&#40;</span><span class="st0">&quot;This is written in the returned function from closureTwo, and here's innerVarThree: &quot;</span> <span class="sy0">+</span> innerVarThree <span class="sy0">+</span> <span class="st0">&quot; and here's aParam &quot;</span> <span class="sy0">+</span> aParam<span class="br0">&#41;</span><span class="sy0">;</span><br />
+
+					&nbsp; &nbsp; <span class="br0">&#125;</span><span class="br0">&#40;</span>aParam<span class="br0">&#41;</span><span class="sy0">;</span><br />
+					<span class="br0">&#125;</span></div></div>
+					<p>The syntax for doing so is a bit quirky I think. First off the parameter is defined in the returned (anonymous) function, fair enough. Now, since it is just a pass through, we need to define it in our declaration of closureThree, makes sense too. Finally, as we&#8217;re calling this function straight away, we need to attach a parameter, otherwise the aParam would be &#8216;undefined&#8217;. Therefore aParam is added as a parameter to the (); part at the end of the function. </p>
+					<p>To actually use this function you need to call it like so:</p>
+					<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:435px;"><div class="text codecolorer">console.log('before closureThree');<br />
+					closureThree('Peter');<br />
+
+					console.log('after closureThree');</div></div>
+					<p>I guess that&#8217;s all there is to it. </p>
+					<p><strong>That&#8217;s All Folks</strong><br />
+					So there you go, that&#8217;s how closures work. Once you get it into your head it&#8217;s easy to understand actually, but so far it has taken me three or four attempts to understand it, and who knows, maybe I&#8217;ll forget it again in another six months, but then I have this blog to return to, and hopefully it&#8217;ll help me remember closures. </p>
+					<p>Or I could just start coding some JavaScript&#8230;any suggestions?</p>
+
+									</div>
+
+									<p class="postmetadata">Tags: <a href="http://peterbodskov.dk/tag/closures/" rel="tag">closures</a>, <a href="http://peterbodskov.dk/tag/javascript/" rel="tag">JavaScript</a>, <a href="http://peterbodskov.dk/tag/programming/" rel="tag">Programming</a><br />   </p>
+					</div>			
+				</div>
+			</div>
+
+		<div id="sidebar">
+			<ul>
+				<li>interesting item</li>
+				<li>interesting item</li>
+				<li>interesting item</li>
+				<li>interesting item</li>
+				<li>interesting item</li>
+				<li>interesting item</li>
+			</ul>
+		</div>
+		</div>
+	</div>
+	<div id="footer">footer</div>
+</body>
+</html>
