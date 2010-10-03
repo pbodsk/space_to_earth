@@ -7,6 +7,57 @@ html {
 	width: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+
+h3 {
+	font-size: 1.8em;
+}
+
+
+h4 {
+	font-size: 1.6em;
+}
+
+
+h5 {
+	font-size: 1.4em;
+}
+
+h6 {
+	font-size: 1.2em;
+}
+
+
+/* General layout classes */
+.roundedbox {
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+}
+
+.linkNoDecoration {
+	text-decoration: none;
+}
+
+a, a:visited {
+	color: #31bbd4;
+}
+
+a:hover {
+	color: rgba(39,181,212,0.45);
+}
+
 #header {
 	width: 100%;
 	border: 1px solid #000;
@@ -26,18 +77,23 @@ html {
 	height: 180px;
 }
  
-#wrap {
+#contentContainer {
 	background: #fff;
 	margin: auto;
 	margin-top: 50px;
 	height: 50%;
 	width: 80%;
 	overflow: auto;
+	padding: 10px;
 }
 
 #content {
 	float: left;
 	width: 75%;
+}
+
+.entry p {
+	line-height: 1.3em;
 }
 
 #sidebar {
