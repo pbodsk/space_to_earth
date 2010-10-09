@@ -5,7 +5,7 @@
  */
 
 get_header(); ?>
-	<div id="contentContainer" class="centeredContent">
+	<div id="contentContainer" class="roundedbox">
 	<div id="content" class="narrowcolumn floatLeft">
 	<?php if (have_posts()) : ?>
 
