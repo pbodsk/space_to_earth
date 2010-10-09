@@ -58,23 +58,37 @@ a:hover {
 	color: rgba(39,181,212,0.45);
 }
 
+.textAlignedRight {
+	text-align: right;
+}
+
 #header {
 	width: 100%;
 	border: 1px solid #000;
 	height: 180px;
 	text-align: center;
 	color: #fff;
-	background: url('img/starsForeground.png') repeat-x scroll -100% 0 transparent;
+	background: url('../img/starsForeground.png') repeat-x scroll -100% 0 transparent;
 }
 
 #outerStarContainer {
-	background: url('img/starsBackground.png') repeat-x scroll -50% 0 transparent;
+	background: url('../img/starsBackground.png') repeat-x scroll -50% 0 transparent;
 	height: 180px;
 }
 
 #innerStarContainer {
-	background: url('img/starsMiddleground.png') repeat-x scroll -10% 0 transparent;
+	background: url('../img/starsMiddleground.png') repeat-x scroll -10% 0 transparent;
 	height: 180px;
+}
+
+#headerWrap {
+	margin: auto;
+	margin-top: 50px;
+	width: 80%;
+}
+
+#headerWrap h1 a, #headerWrap h1 a:hover, #headerWrap h1 a:visited {
+	color: #fff;
 }
  
 #contentContainer {
