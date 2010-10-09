@@ -1,0 +1,12 @@
+/*
+Theme Name: Space_To_Earth
+Theme URI: http://peterbodskov.dk/
+Description: A journey from space to earth
+Version: 0.1
+Author: Peter Bødskov
+Author URI: http://peterbodskov.dk
+Tags: fluid, CSS3
+
+*/
+@import url("style/reset.css");
+@import url("style/master.css");
