@@ -1,7 +1,7 @@
 <?php
 /**
- * @package take2
- * @subpackage take2
+ * @package space_to_earth
+ * @subpackage space_to_earth
  */
 ?>
 <div id="spacer"> </div>
@@ -13,17 +13,13 @@
 		<!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
 	</p>
 	<p><?php
-	    $theme_data = get_theme_data(ABSPATH . 'wp-content/themes/take2/style.css');
+	    $theme_data = get_theme_data(ABSPATH . 'wp-content/themes/space_to_earth/style.css');
 	    echo "Theme: " . $theme_data['Title'] . " by ";
 	    echo $theme_data['Author'];
 	?>
 	</p>
 </div>
 </div>
-
-<!-- Gorgeous design by Michael Heilemann - http://binarybonsai.com/kubrick/ -->
-<?php /* "Just what do you think you're doing Dave?" */ ?>
-
 		<?php wp_footer(); ?>
 </body>
 </html>
