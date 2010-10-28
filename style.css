@@ -10,3 +10,4 @@ Tags: fluid, CSS3
 */
 @import url("style/reset.css");
 @import url("style/master.css");
+@import url("style/mobile.css") screen and (max-width: 480px);

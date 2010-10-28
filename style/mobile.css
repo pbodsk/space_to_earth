@@ -1,0 +1,39 @@
+body {
+	font-size: 70%;
+}
+
+#header {
+	background: none;
+}
+
+#outerStarContainer {
+	background: none;
+}
+
+#innerStarContainer {
+	background: none;
+}
+
+#headerWrap {
+	width: 85%;
+}
+
+.tagline {
+	font-size: 90% ;
+}
+
+#sidebar {
+	display: none;
+}
+
+#contentContainer {
+	width: 85%;
+}
+
+#content {
+	width: 100%;
+}
+
+#divNavigation {
+	display: none;
+}
