@@ -9,12 +9,12 @@
 
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<meta name="viewport" content="user-scalable=no, width=device-width" /> 
 
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/functions.js"> </script>
 
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
@@ -30,7 +30,7 @@
 		<div id="innerStarContainer">
 			<div id="headerWrap">
 				<h1 class="textAlignedRight"><a class="linkNoDecoration" href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-				<div class="textAlignedRight"><?php bloginfo('description'); ?></div>
+				<div class="textAlignedRight tagline"><?php bloginfo('description'); ?></div>
 			</div>
 		</div>
 	</div>
