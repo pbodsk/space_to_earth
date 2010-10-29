@@ -5,19 +5,19 @@
  */
 
 get_header(); ?>
-	<div id="contentContainer" class="roundedbox">
-	<div id="content" class="narrowcolumn floatLeft">
+	<div id="content-container" class="roundedbox">
+	<div id="content" class="narrowcolumn alignleft">
 	<?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 
 			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 				
-				<h2 class="entryHeader"><a class="linkNoDecoration" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				<h2 class="entry-header"><a class="link-no-decoration" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 				<div class="divPostData">
 					
-					<p class="Author floatLeft small">Posted by <?php the_author_posts_link(); ?> in <?php the_category(', ') ?> on the <?php the_time('jS M Y') ?> </p>
-					<p class="Comments floatRight small"><?php comments_popup_link('0 Comments', '1 Comment', '% Comments'); ?></p>
+					<p class="Author alignleft small">Posted by <?php the_author_posts_link(); ?> in <?php the_category(', ') ?> on the <?php the_time('jS M Y') ?> </p>
+					<p class="Comments alignright small"><?php comments_popup_link('0 Comments', '1 Comment', '% Comments'); ?></p>
 				</div>
 				<div class="entry">
 					<?php the_content('Read the rest of this entry &raquo;'); ?>

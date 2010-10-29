@@ -26,16 +26,16 @@
 
 
 <div id="header">
-	<div id="outerStarContainer">
-		<div id="innerStarContainer">
-			<div id="headerWrap">
-				<h1 class="textAlignedRight"><a class="linkNoDecoration" href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-				<div class="textAlignedRight tagline"><?php bloginfo('description'); ?></div>
+	<div id="outer-star-container">
+		<div id="inner-star-container">
+			<div id="header-wrap">
+				<h1 class="align-text-right"><a class="link-no-decoration" href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+				<div class="align-text-right tagline"><?php bloginfo('description'); ?></div>
 			</div>
 		</div>
 	</div>
 	
-	<div id="divNavigation">
+	<div id="div-navigation">
 		<ul>
 			<li><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></li>
 			<?php wp_list_pages('title_li=' ); ?>
