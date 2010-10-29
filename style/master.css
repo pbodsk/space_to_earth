@@ -17,6 +17,7 @@ h1 {
 
 h2 {
 	font-size: 2em;
+	text-shadow: rgba(82,145,14,0.45) 4px 4px 1px;
 }
 
 
@@ -98,7 +99,6 @@ a, a:visited {
 }
 
 a:hover {
-	/*color: rgba(0,216,255,0.45);*/
 	color: rgba(82,145,14,0.45);
 }
 
@@ -108,7 +108,6 @@ a:hover {
 
 #header {
 	width: 100%;
-	border: 1px solid #000;
 	height: 180px;
 	text-align: center;
 	color: #fff;

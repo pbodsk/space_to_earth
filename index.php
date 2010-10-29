@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage peterbodskov
+ * @subpackage space_to_earth
  */
 
 get_header(); ?>
