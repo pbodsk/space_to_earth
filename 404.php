@@ -13,9 +13,9 @@ get_header(); ?>
 		<div id="content">
 
 			<div id="post-0" class="post error404 not-found">
-				<h1 class="entry-title"><?php _e( 'Aw snap!', 'twentyten' ); ?></h1>
+				<h1 class="entry-title"><?php _e( '404, say no more', 'space_to_earth' ); ?></h1>
 				<div class="entry-content">
-					<p><?php _e( 'Not found', 'space_to_earth' ); ?></p>
+					<p><?php _e( 'You are looking for something that isn\'t there', 'space_to_earth' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .entry-content -->
 			</div><!-- #post-0 -->
@@ -23,7 +23,6 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #container -->
 	<script type="text/javascript">
-		// focus on search field after it has loaded
 		document.getElementById('s') && document.getElementById('s').focus();
 	</script>
 
