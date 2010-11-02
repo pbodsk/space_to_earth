@@ -1,5 +1,5 @@
 html {
-
+	background: url('../img/heaven.png') repeat-x #00d8ff;
 	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#00d8ff));
 	background: -moz-linear-gradient(270deg, #000, #00d8ff);
 
@@ -9,6 +9,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	margin: 20px 0 4px 0;
 }
 
 h1 {
@@ -17,7 +18,6 @@ h1 {
 
 h2 {
 	font-size: 2em;
-	text-shadow: rgba(82,145,14,0.45) 4px 4px 1px;
 }
 
 
@@ -131,6 +131,7 @@ a:hover {
 }
 
 #header-wrap h1 a, #header-wrap h1 a:hover, #header-wrap h1 a:visited {
+	letter-spacing: -0.1em;
 	color: #fff;
 }
 
@@ -171,16 +172,22 @@ a:hover {
 }
 
 .entry-header {
-	margin: 15px 0;
+	margin: 19px 0 1px 0;
 }
 
 .entry {
 	clear: both;
-	margin-top: 40px;
+	margin-top: 30px;
 }
 
 .entry p {
 	line-height: 1.5em;
+}
+
+.postmetadata {
+	font-style: italic;
+	font-size: 0.9em;
+	margin-top: 5px;
 }
 
 /* sidebar */
