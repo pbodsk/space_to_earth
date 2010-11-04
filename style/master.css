@@ -170,6 +170,7 @@ a:hover {
 #content {
 	float: left;
 	width: 70%;
+	overflow: hidden;
 }
 
 .entry-header {
@@ -183,6 +184,13 @@ a:hover {
 
 .entry p {
 	line-height: 1.5em;
+	margin-bottom: 10px;
+}
+
+.entry ul {
+	list-style-type: disc;
+	list-style-position: inside;
+	margin-bottom: 10px;
 }
 
 .postmetadata {
