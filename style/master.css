@@ -232,6 +232,10 @@ a:hover {
 	margin: 5px 0;
 }
 
+.error404 {
+	height: 300px;
+}
+
 .group:after {
 	content: ".";
 	display: block;

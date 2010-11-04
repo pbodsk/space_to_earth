@@ -13,12 +13,14 @@ get_header(); ?>
 		<div id="content">
 
 			<div id="post-0" class="post error404 not-found">
-				<h1 class="entry-title"><?php _e( '404, say no more', 'space_to_earth' ); ?></h1>
+				<h2 class="entry-title">Computer says no</h2>
 				<div class="entry-content">
-					<p><?php _e( 'You are looking for something that isn\'t there', 'space_to_earth' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-			</div><!-- #post-0 -->
+					<p>Congratulations!</p>
+					<p>You just got yourself a 404, meaning that you tried to request a page that does not exist on this blog.</p>
+					<p>Have a look at the address bar, are you sure that was the address you were looking for?</p>
+					<a href="<?php echo get_option('home'); ?>/">Take me back to the index page then</a>
+				</div>
+			</div>
 
 		</div><!-- #content -->
 	</div><!-- #container -->
