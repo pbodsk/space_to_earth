@@ -10,6 +10,7 @@ html {
 h1, h2, h3, h4, h5, h6 {
 	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
 	margin: 20px 0 4px 0;
+	color: #52910E;
 }
 
 h1 {
@@ -225,6 +226,10 @@ a:hover {
 #footer a, #footer a:hover, #footer a:visited {
 	color: #fff;
 	text-decoration: none;
+}
+
+#commentform p {
+	margin: 5px 0;
 }
 
 .group:after {
