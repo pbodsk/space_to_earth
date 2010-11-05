@@ -14,7 +14,7 @@ get_header(); ?>
 			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 				
 				<h2 class="entry-header"><a class="link-no-decoration" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				<div class="divPostData">
+				<div class="postdata">
 					
 					<p class="Author alignleft small">Posted by <?php the_author_posts_link(); ?> in <?php the_category(', ') ?> on the <?php the_time('jS M Y') ?> </p>
 					<p class="Comments alignright small"><?php comments_popup_link('0 Comments', '1 Comment', '% Comments'); ?></p>

@@ -240,6 +240,38 @@ a:hover {
 	margin: 5px 0;
 }
 
+.comment {
+	margin: 15px 0;
+}
+
+.comment-author {
+	width: 45%;
+	float: left;
+	font-size: 0.9em;
+}
+
+.comment-author img {
+	width: 10%;
+	float: left;
+}
+
+.fn {
+	padding-left: 10px;
+	font-style: italic;
+}
+
+.commentmetadata {
+	width: 40%;
+	float: right;
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+.comment-body p {
+	clear: both;
+	padding-top: 10px;
+}
+
 .error404 {
 	height: 300px;
 }

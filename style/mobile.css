@@ -15,7 +15,7 @@ body {
 }
 
 #headerWrap {
-	width: 85%;
+	width: 95%;
 }
 
 .tagline {
@@ -26,14 +26,36 @@ body {
 	display: none;
 }
 
+.Comments {
+	display: none;
+}
+
 #contentContainer {
-	width: 85%;
+	width: 95%;
 }
 
 #content {
 	width: 100%;
 }
 
-#divNavigation {
+#div-navigation ul li:last-child,
+#div-navigation ul li:nth-child(3) {
 	display: none;
+}
+
+.avatar {
+	display: none;
+}
+
+.fn {
+	padding-left: 0px;
+}
+
+.comment-author {
+	width: 35%;
+}
+
+.commentmetadata {
+	width: 50%;
+	float: right;
 }
