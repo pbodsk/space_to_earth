@@ -1,7 +1,7 @@
 html {
 	background: url('../img/heaven.png') repeat-x #00d8ff;
-	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#00d8ff));
-	background: -moz-linear-gradient(270deg, #000, #00d8ff);
+	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#b6f3fa));
+	background: -moz-linear-gradient(270deg, #000, #b6f3fa);
 
 	/*height: 100%;*/
 	width: 100%;
@@ -219,6 +219,8 @@ a:hover {
 #footer {
 	width: 100%;
 	background: #52910E;
+	background: -moz-linear-gradient(270deg, #52910e, #324f13);
+	background: -webkit-gradient(linear, left top, left bottom, from(#52910e), to(#324f13));
 	height: 100px;
 }
 
